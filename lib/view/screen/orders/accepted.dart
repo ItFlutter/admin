@@ -9,6 +9,9 @@ class OrdersAccepted extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("===========================================================");
+    print(Get.currentRoute);
+    print("===========================================================");
     Get.put(OrdersAcceptedController());
     return Container(
         padding: const EdgeInsets.all(10),

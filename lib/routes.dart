@@ -1,4 +1,7 @@
 import 'package:admin/view/screen/categories/add.dart';
+import 'package:admin/view/screen/coupon/add.dart';
+import 'package:admin/view/screen/coupon/view.dart';
+import 'package:admin/view/screen/delivery/view.dart';
 import 'package:admin/view/screen/items/view.dart';
 import 'package:get/get.dart';
 import 'core/constant/routes.dart';
@@ -13,12 +16,16 @@ import 'view/screen/auth/successsignup.dart';
 import 'view/screen/auth/verifycodesignup.dart';
 import 'view/screen/categories/edit.dart';
 import 'view/screen/categories/view.dart';
+import 'view/screen/coupon/edit.dart';
+import 'view/screen/delivery/add.dart';
+import 'view/screen/delivery/edit.dart';
 import 'view/screen/home.dart';
 import 'view/screen/items/add.dart';
 import 'view/screen/items/edit.dart';
 import 'view/screen/language.dart';
 import 'view/screen/orders/details.dart';
 import 'view/screen/orders/screen.dart';
+import 'view/screen/users.dart';
 
 List<GetPage<dynamic>>? routes = [
   GetPage(
@@ -49,4 +56,14 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.itemsedit, page: () => const ItemsEdit()),
   //Orders
   GetPage(name: AppRoute.ordershome, page: () => const OrderScreen()),
+  //Items
+  GetPage(name: AppRoute.couponview, page: () => const CouponView()),
+  GetPage(name: AppRoute.couponadd, page: () => const CouponAdd()),
+  GetPage(name: AppRoute.couponedit, page: () => const CouponEdit()),
+  //Users
+  GetPage(name: AppRoute.usersview, page: () => const UsersView()),
+  //Delivery
+  GetPage(name: AppRoute.deliveryview, page: () => const DeliveryView()),
+  GetPage(name: AppRoute.deliveryadd, page: () => const DeliveryAdd()),
+  GetPage(name: AppRoute.deliveryedit, page: () => const DeliveryEdit()),
 ];

@@ -56,15 +56,31 @@ class HomePage extends StatelessWidget {
                   }),
               CardAdminHome(
                   height: 80,
-                  url: AppImageAsset.users,
-                  title: "157".tr,
-                  onClick: () {}),
-              CardAdminHome(
-                  height: 80,
                   url: AppImageAsset.orders,
                   title: "106".tr,
                   onClick: () {
                     Get.toNamed(AppRoute.ordershome);
+                  }),
+              CardAdminHome(
+                  height: 80,
+                  url: AppImageAsset.coupon,
+                  title: "185".tr,
+                  onClick: () {
+                    Get.toNamed(AppRoute.couponview);
+                  }),
+              CardAdminHome(
+                  height: 80,
+                  url: AppImageAsset.users,
+                  title: "157".tr,
+                  onClick: () {
+                    Get.toNamed(AppRoute.usersview);
+                  }),
+              CardAdminHome(
+                  height: 80,
+                  url: AppImageAsset.deliveryman,
+                  title: "89".tr,
+                  onClick: () {
+                    Get.toNamed(AppRoute.deliveryview);
                   }),
               CardAdminHome(
                   height: 80,

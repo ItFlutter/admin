@@ -9,6 +9,9 @@ class OrdersArchiveView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("===========================================================");
+    print(Get.currentRoute);
+    print("===========================================================");
     Get.put(OrdersArchiveController());
     return Container(
         padding: const EdgeInsets.all(10),

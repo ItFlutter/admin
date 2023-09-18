@@ -34,7 +34,7 @@ class CardOrderListAccepted extends GetView<OrdersAcceptedController> {
                           fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      Jiffy(listdata.ordersDatetime, "yyy-MM-dd").fromNow(),
+                      Jiffy(listdata.ordersDatetime).fromNow(),
                       style: const TextStyle(
                           color: AppColor.primaryColor,
                           fontWeight: FontWeight.bold),
@@ -45,7 +45,9 @@ class CardOrderListAccepted extends GetView<OrdersAcceptedController> {
                 Text(
                     "${"109".tr} : ${controller.printOrderType(listdata.ordersType!)}"),
                 Text("${"110".tr} : ${listdata.ordersPrice} \$"),
-                Text("${"111".tr} : ${listdata.ordersPricedelivery} \$"),
+                listdata.ordersType! == "0"
+                    ? Text("${"111".tr} : ${listdata.ordersPricedelivery} \$")
+                    : Container(),
                 Text(
                     "${"112".tr} : ${controller.printPaymentMethod(listdata.ordersPaymentmethod!)}"),
                 Text(

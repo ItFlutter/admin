@@ -33,4 +33,8 @@ class AppImageAsset {
   static const String users = "$rootImages/users.png";
   static const String orders = "$rootImages/orders.png";
   static const String categories = "$rootImages/categories.png";
+  static const String coupon = "$rootImages/coupon.png";
+  static const String couponbackground = "$rootImages/coupon_background.png";
+  static const String deliveryman = "$rootImages/deliveryman.png";
+  static const String deliveryprofile = "$rootImages/deliveryprofile.png";
 }

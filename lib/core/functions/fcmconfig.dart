@@ -2,6 +2,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 import 'package:get/get.dart';
 
+import '../../controller/orders/accepted_controller.dart';
 import '../../controller/orders/pending_controller.dart';
 
 fcmconfig() {
@@ -22,8 +23,13 @@ refreshPageNotification(data) {
   print(data['pageid']);
   print("====================================Current Route");
   print(Get.currentRoute);
-  if (Get.currentRoute == "/homepage" &&
-      data['pagename'] == "refreshorderpending") {
+  if (Get.currentRoute == "/ordershome" && data['pagename'] == "ordershome") {
+    print("==============================I Am In Page Order");
+    OrdersAcceptedController controller = Get.find();
+    controller.refreshorder();
+  }
+  if (Get.currentRoute == "/ordershome" &&
+      data['pagename'] == "ordershomepending") {
     print("==============================I Am In Page Order");
     OrdersPendingController controller = Get.find();
     controller.refreshorder();

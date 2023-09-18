@@ -1,4 +1,3 @@
-import 'package:admin/controller/items/add_controller.dart';
 import 'package:admin/controller/items/edit_controller.dart';
 import 'package:admin/core/class/handlingdataview.dart';
 import 'package:admin/core/functions/validinput.dart';
@@ -14,7 +13,7 @@ class ItemsEdit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ItemsEditController controller = Get.put(ItemsEditController());
+    Get.put(ItemsEditController());
     return Scaffold(
         appBar: AppBar(title: Text("181".tr)),
         body: GetBuilder<ItemsEditController>(

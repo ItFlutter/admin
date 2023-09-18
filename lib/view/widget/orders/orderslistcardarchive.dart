@@ -34,7 +34,7 @@ class CardOrderListArchive extends GetView<OrdersArchiveController> {
                           fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      Jiffy(listdata.ordersDatetime, "yyy-MM-dd").fromNow(),
+                      Jiffy(listdata.ordersDatetime).fromNow(),
                       style: const TextStyle(
                           color: AppColor.primaryColor,
                           fontWeight: FontWeight.bold),
@@ -45,7 +45,9 @@ class CardOrderListArchive extends GetView<OrdersArchiveController> {
                 Text(
                     "${"109".tr} : ${controller.printOrderType(listdata.ordersType!)}"),
                 Text("${"110".tr} : ${listdata.ordersPrice} \$"),
-                Text("${"111".tr} : ${listdata.ordersPricedelivery} \$"),
+                listdata.ordersType! == "0"
+                    ? Text("${"111".tr} : ${listdata.ordersPricedelivery} \$")
+                    : Container(),
                 Text(
                     "${"112".tr} : ${controller.printPaymentMethod(listdata.ordersPaymentmethod!)}"),
                 Text(
@@ -60,6 +62,29 @@ class CardOrderListArchive extends GetView<OrdersArchiveController> {
                           fontWeight: FontWeight.bold,
                           color: AppColor.primaryColor),
                     ),
+                    InkWell(
+                      onTap: () {
+                        Get.defaultDialog(
+                            title:
+                                "${listdata.ordersNoterating == "none" ? "209".tr : listdata.ordersNoterating}",
+                            content: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                ...List.generate(
+                                    int.parse(listdata.ordersRating!), (index) {
+                                  return const Icon(
+                                    Icons.star,
+                                    color: Colors.yellow,
+                                  );
+                                }),
+                              ],
+                            ));
+                      },
+                      child: Text(
+                        "Rating: ${listdata.ordersRating == "0" ? "-" : listdata.ordersRating}/5",
+                        style: const TextStyle(color: Colors.black),
+                      ),
+                    )
                     // MaterialButton(
                     //   onPressed: () {
                     //     Get.toNamed(AppRoute.ordersdetails,

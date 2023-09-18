@@ -10,6 +10,9 @@ class OrdersPending extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("===========================================================");
+    print(Get.currentRoute);
+    print("===========================================================");
     Get.put(OrdersPendingController());
     return Container(
         padding: const EdgeInsets.all(10),
